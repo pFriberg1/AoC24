@@ -9,13 +9,10 @@ for (let i = 0; i < numArray.length; i++) {
   let isDescending = false;
   let isAscending = false;
   for (let j = 1; j < numArray[i].length; j++) {
-    let diff = Math.abs(cmp - numArray[i][j]);
-    if ((diff === 1 || diff === 2 || diff === 3) && cmp > numArray[i][j]) {
+    let diff = cmp - numArray[i][j];
+    if (1 <= diff && diff <= 3) {
       isDescending = true;
-    } else if (
-      (diff === 1 || diff === 2 || diff === 3) &&
-      cmp < numArray[i][j]
-    ) {
+    } else if (-3 <= diff && diff <= -1) {
       isAscending = true;
     } else {
       isAscending = false;
