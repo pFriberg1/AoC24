@@ -5,13 +5,13 @@ let result = 0;
 for (let i = 0; i < lines.length; i++) {
     for (let j = 0; j < lines[i].length; j++) {
         if (lines[i][j] === 'A') {
-            let leftDiagonal = [lines[i-1]?.[j-1], lines[i][j], lines[i+1]?.[j+1]];
-            let rightDiagonal = [lines[i-1]?.[j+1], lines[i][j], lines[i+1]?.[j-1]];
+            let leftDiagonal = [lines[i-1]?.[j-1], lines[i+1]?.[j+1]];
+            let rightDiagonal = [lines[i-1]?.[j+1], lines[i+1]?.[j-1]];
 
             let left = leftDiagonal.toString();
             let right = rightDiagonal.toString();
 
-            if ((left === 'M,A,S' || left === 'S,A,M') && (right === 'M,A,S' || right === 'S,A,M')) {
+            if ((left === 'M,S' || left === 'S,M') && (right === 'M,S' || right === 'S,M')) {
                 result++; 
             }
         }    
